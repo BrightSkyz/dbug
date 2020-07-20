@@ -15,12 +15,20 @@ let stepCount = 1;
 
 $("#outputTextHidden").hide();
 
+$("#step1").on("keyup", () => {
+	update();
+});
+
 function update() {
 	let builtCommand = "!submit";
 	builtCommand += " -t " + $("#title").val();
 	builtCommand += " -r";
 	for (let i = 1; i < stepCount + 1; i++) {
-		builtCommand += " ~ " + $("#step" + i).val();
+		if (i == 1) {
+			builtCommand += " " + $("#step" + i).val();
+		} else {
+			builtCommand += " ~ " + $("#step" + i).val();
+		}
 	}
 	builtCommand += " -e " + $("#expectedResult").val();
 	builtCommand += " -a " + $("#actualResult").val();
