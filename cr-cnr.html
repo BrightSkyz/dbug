@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
-		<title>Report - DBug Tool</title>
+		<title>Can/Can't Reproduce - DBug Tool</title>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -36,38 +36,20 @@
 		</nav>
 		<div class="container">
 			<div class="text-center">
-				<h3>Report a bug using DBug!</h3>
+				<h3>Add a can or can't reproduce to a existing bug report.</h3>
 			</div>
 			<div class="form-group">
-				<label for="title">Title</label>
-				<input type="text" class="form-control" id="title">
-				<small id="titleHelp" class="form-text text-muted">Provide a short description of the bug.</small>
-			</div>
-			<div id="steps">
-				<h4>Steps
-					<button type="button" class="btn btn-success btn-sm" id="addStep">+</button>
-					<button type="button" class="btn btn-danger btn-sm" id="removeStep">-</button>
-				</h4>
-				<!-- Steps -->
-				<div class="form-group row" id="step1Div">
-					<label for="staticEmail" class="col-sm-2 col-form-label">Step 1</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="step1">
-					</div>
-				</div>
-			</div>
-			<h4>Results</h4>
-			<div class="form-group">
-				<label for="expectedResult">Expected Result</label>
-				<input type="text" class="form-control" id="expectedResult">
-				<small id="expectedResultHelp" class="form-text text-muted">This is what is supposed to happen.</small>
+				<label for="canCantOption">Choose wether or not you can reproduce the bug.</label>
+				<select class="form-control" id="canCantOption">
+					<option value="canrepro" selected>Can Reproduce</option>
+					<option value="cannotrepro">Can't Reproduce</option>
+				</select>
 			</div>
 			<div class="form-group">
-				<label for="actualResult">Actual Result</label>
-				<input type="text" class="form-control" id="actualResult">
-				<small id="actualResultHelp" class="form-text text-muted">This is what actually happens.</small>
+				<label for="reportId">Report ID</label>
+				<input type="number" class="form-control" id="reportId">
+				<small id="reportIdHelp" class="form-text text-muted">Provide the report ID of the bug. (It should be at the bottom of bug report.)</small>
 			</div>
-			<h4>Information</h4>
 			<div class="form-group">
 				<label for="clientVersion">Client Version</label>
 				<input type="text" class="form-control" id="clientVersion">
@@ -88,6 +70,6 @@
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-		<script src="js/dbug-index.js"></script>
+		<script src="js/dbug-cr-cnr.js"></script>
 	</body>
 </html>
