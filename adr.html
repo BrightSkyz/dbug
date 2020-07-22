@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
-		<title>Edit Title - DBug Tool</title>
+		<title>Approve/Deny/Revoke - DBug Tool</title>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -45,7 +45,15 @@
 		</nav>
 		<div class="container">
 			<div class="text-center">
-				<h3>Edit the title of an existing bug.</h3>
+				<h3>Add an approval, deny, or revoke to an existing bug report.</h3>
+			</div>
+			<div class="form-group">
+				<label for="commandOption">Choose the command option.</label>
+				<select class="form-control" id="commandOption">
+					<option value="approve" selected>Approve</option>
+					<option value="deny">Deny</option>
+					<option value="revoke">Revoke</option>
+				</select>
 			</div>
 			<div class="form-group">
 				<label for="reportId">Report ID</label>
@@ -53,9 +61,14 @@
 				<small id="reportIdHelp" class="form-text text-muted">Provide the report ID of the bug. (It should be at the bottom of bug report.)</small>
 			</div>
 			<div class="form-group">
-				<label for="title">Title</label>
-				<input type="text" class="form-control" id="title">
-				<small id="titleHelp" class="form-text text-muted">Provide a short description of the bug.</small>
+				<label for="clientVersion">Client Version</label>
+				<input type="text" class="form-control" id="clientVersion">
+				<small id="clientVersionHelp" class="form-text text-muted">This is your client version. Example: Android Alpha 31.1 (1199)</small>
+			</div>
+			<div class="form-group">
+				<label for="systemSettings">System Settings</label>
+				<input type="text" class="form-control" id="systemSettings">
+				<small id="systemSettingsHelp" class="form-text text-muted">This is your system, and should include device name if you are on mobile. Example: iPhone 10, iOS 13.5.0</small>
 			</div>
 			<h4>Output</h4>
 			<div class="card card-body bg-light" id="outputText">Fill out the form to see the command here!</div>
@@ -67,6 +80,6 @@
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-		<script src="js/dbug-edit-title.js"></script>
+		<script src="js/dbug-adr.js"></script>
 	</body>
 </html>
