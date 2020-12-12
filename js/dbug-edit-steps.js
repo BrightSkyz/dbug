@@ -23,7 +23,7 @@ function update() {
 		if (i == 1) {
 			builtCommand += " " + $("#step" + i).val();
 		} else {
-			builtCommand += " ~ " + $("#step" + i).val();
+			builtCommand += " - " + $("#step" + i).val();
 		}
 	}
 	$("#outputText").text(builtCommand);
